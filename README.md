@@ -104,16 +104,17 @@ docker exec -it $UTIL_ID \
 
 exit
 
-cat conf/prometheus.yml
+cat /vagrant/prometheus/conf/prometheus.yml
 
-mkdir -p docker/prometheus
+mkdir -p /vagrant/data/prometheus
+
 
 docker service create \
     --name prometheus \
     --network proxy \
     -p 9090:9090 \
-    --mount "type=bind,source=$PWD/conf/prometheus.yml,target=/etc/prometheus/prometheus.yml" \
-    --mount "type=bind,source=$PWD/docker/prometheus,target=/prometheus" \
+    --mount "type=bind,source=/vagrant/prometheus/conf/prometheus.yml,target=/etc/prometheus/prometheus.yml" \
+    --mount "type=bind,source=/vagrant/data/prometheus,target=/prometheus" \
     prom/prometheus:v1.2.1
 
 docker service ps prometheus
