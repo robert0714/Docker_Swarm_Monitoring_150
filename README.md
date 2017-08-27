@@ -148,9 +148,9 @@ docker service create \
 
 docker service ps elasticsearch
 
-docker service create \
+ docker service create \
     --name logstash \
-    --mount "type=bind,source=$PWD/conf,target=/conf" \
+    --mount "type=bind,source=/vagrant/logstash/conf,target=/conf" \
     --network proxy \
     -e LOGSPOUT=ignore \
     logstash:2.4 \
