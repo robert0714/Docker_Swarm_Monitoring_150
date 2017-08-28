@@ -75,7 +75,7 @@ docker service create --name cadvisor \
     --mount "type=bind,source=/var/run,target=/var/run" \
     --mount "type=bind,source=/sys,target=/sys" \
     --mount "type=bind,source=/var/lib/docker,target=/var/lib/docker" \
-    google/cadvisor:v0.24.1
+    google/cadvisor:v0.26.1
 
 docker service ps cadvisor
 
@@ -115,7 +115,7 @@ docker service create \
     -p 9090:9090 \
     --mount "type=bind,source=/vagrant/prometheus/conf/prometheus.yml,target=/etc/prometheus/prometheus.yml" \
     --mount "type=bind,source=/vagrant/data/prometheus,target=/prometheus" \
-    prom/prometheus:v1.2.1
+    prom/prometheus:v1.7.1
 
 docker service ps prometheus
 
@@ -131,7 +131,8 @@ docker service create \
     --name grafana \
     --network proxy \
     -p 3000:3000 \
-    grafana/grafana:3.1.1
+    grafana/grafana:4.4.3
+    ##3.1.1
 
 docker service ps grafana
 
