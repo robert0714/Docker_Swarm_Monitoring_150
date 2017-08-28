@@ -50,7 +50,7 @@ docker service create \
     --mount "type=bind,source=/proc,target=/host/proc" \
     --mount "type=bind,source=/sys,target=/host/sys" \
     --mount "type=bind,source=/,target=/rootfs" \
-    prom/node-exporter:0.12.0 \
+    prom/node-exporter:0.14.0 \
     -collector.procfs /host/proc \
     -collector.sysfs /host/proc \
     -collector.filesystem.ignored-mount-points \
@@ -189,7 +189,7 @@ docker service create \
     --mount "type=bind,source=/,target=/rootfs" \
     --mount "type=bind,source=/etc/hostname,target=/etc/host_hostname" \
     -e HOST_HOSTNAME=/etc/host_hostname \
-    basi/node-exporter:v0.1.1 \
+    basi/node-exporter:v1.14.0 \
     -collector.procfs /host/proc \
     -collector.sysfs /host/proc \
     -collector.filesystem.ignored-mount-points "^/(sys|proc|dev|host|etc)($|/)" \
