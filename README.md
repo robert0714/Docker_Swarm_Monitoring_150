@@ -50,7 +50,7 @@ docker service create \
     --mount "type=bind,source=/proc,target=/host/proc" \
     --mount "type=bind,source=/sys,target=/host/sys" \
     --mount "type=bind,source=/,target=/rootfs" \
-    prom/node-exporter:0.14.0 \
+    prom/node-exporter:v0.14.0 \
     -collector.procfs /host/proc \
     -collector.sysfs /host/proc \
     -collector.filesystem.ignored-mount-points \
