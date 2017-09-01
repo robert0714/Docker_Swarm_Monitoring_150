@@ -18,7 +18,8 @@ Vagrant.configure(2) do |config|
       
       d.vm.provision :shell, inline: "ip route delete default 2>&1 >/dev/null || true; ip route add default via #{default_router}"
       d.vm.provider "virtualbox" do |v|        
-        v.memory = 1536
+        v.memory = 2048
+        v.cpus = 2
       end
     end
   end 
