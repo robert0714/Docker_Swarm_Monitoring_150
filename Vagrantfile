@@ -10,7 +10,7 @@ Vagrant.configure(2) do |config|
   default_router = "192.168.57.1"
   (1..5).each do |i|
     config.vm.define "swarm-#{i}" do |d|
-      d.vm.box = "bento/centos-7.3"
+      d.vm.box = "bento/centos-7.4"
 #      d.vm.box_version = "2.3.7"
       d.vm.hostname = "swarm-#{i}"
 #      d.vm.network "private_network", ip: "10.100.193.20#{i}"
